@@ -8,7 +8,10 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
+/**
+ *
+ * @author Diogo Enrico Marianna
+ */
 public class Common {
     
     public static void initFirebase(){

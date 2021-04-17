@@ -1,7 +1,10 @@
 package com.mycompany.firebase.menu;
 
 import static com.mycompany.firebase.util.Common.initFirebase;
-
+/**
+ *
+ * @author Diogo Enrico Marianna
+ */
 public class Menu extends javax.swing.JFrame {
 
     public Menu() {
@@ -14,234 +17,234 @@ public class Menu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Background = new javax.swing.JPanel();
-        Fechar = new javax.swing.JButton();
-        Connect = new javax.swing.JButton();
-        Sync = new javax.swing.JButton();
-        pesquisa = new javax.swing.JPanel();
-        Pesquisa = new javax.swing.JLabel();
-        faunaFlora1 = new javax.swing.JLabel();
-        opFaunaFlora = new javax.swing.JComboBox<>();
-        grupo = new javax.swing.JLabel();
-        opGrupo = new javax.swing.JComboBox<>();
-        familia = new javax.swing.JLabel();
-        opFamilia = new javax.swing.JComboBox<>();
-        especie = new javax.swing.JLabel();
+        panBackground = new javax.swing.JPanel();
+        btnFechar = new javax.swing.JButton();
+        btnConnect = new javax.swing.JButton();
+        btnSync = new javax.swing.JButton();
+        panPesquisa = new javax.swing.JPanel();
+        lblPesquisa = new javax.swing.JLabel();
+        lblFaunaFlora = new javax.swing.JLabel();
+        cbFaunaFlora = new javax.swing.JComboBox<>();
+        lblGrupo = new javax.swing.JLabel();
+        cbGrupo = new javax.swing.JComboBox<>();
+        lblFamilia = new javax.swing.JLabel();
+        cbFamilia = new javax.swing.JComboBox<>();
+        lblEspecie = new javax.swing.JLabel();
         txtEspecie = new javax.swing.JTextField();
-        bioma = new javax.swing.JLabel();
+        lblBioma = new javax.swing.JLabel();
         txtBioma = new javax.swing.JTextField();
-        pesquisar = new javax.swing.JButton();
-        limparPesquisa = new javax.swing.JButton();
-        catAmeaca = new javax.swing.JLabel();
+        btnPesquisar = new javax.swing.JButton();
+        btnLimparPesquisa = new javax.swing.JButton();
+        lblCatAmeaca = new javax.swing.JLabel();
         txtAmeaca = new javax.swing.JTextField();
-        prinAmeaca = new javax.swing.JLabel();
+        lblPrinAmeaca = new javax.swing.JLabel();
         txtPrinAmeaca = new javax.swing.JTextField();
-        nomeComum = new javax.swing.JLabel();
+        lblNomeComum = new javax.swing.JLabel();
         txtNomeComum = new javax.swing.JTextField();
-        estadosOcorrencia = new javax.swing.JLabel();
+        lblEstadosOcorrencia = new javax.swing.JLabel();
         txtOcorrencia = new javax.swing.JTextField();
-        respostaServer = new javax.swing.JPanel();
+        panRespostaServer = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(1280, 720));
         setResizable(false);
 
-        Background.setToolTipText("");
-        Background.setAutoscrolls(true);
-        Background.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        Background.setMaximumSize(new java.awt.Dimension(1280, 720));
-        Background.setMinimumSize(new java.awt.Dimension(1280, 720));
-        Background.setName(""); // NOI18N
-        Background.setPreferredSize(new java.awt.Dimension(1280, 720));
-        Background.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        panBackground.setToolTipText("");
+        panBackground.setAutoscrolls(true);
+        panBackground.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        panBackground.setMaximumSize(new java.awt.Dimension(1280, 720));
+        panBackground.setMinimumSize(new java.awt.Dimension(1280, 720));
+        panBackground.setName(""); // NOI18N
+        panBackground.setPreferredSize(new java.awt.Dimension(1280, 720));
+        panBackground.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Fechar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        Fechar.setText("Fechar");
-        Fechar.addActionListener(new java.awt.event.ActionListener() {
+        btnFechar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnFechar.setText("Fechar");
+        btnFechar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                FecharActionPerformed(evt);
+                btnFecharActionPerformed(evt);
             }
         });
-        Background.add(Fechar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 10, 130, 30));
+        panBackground.add(btnFechar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 10, 130, 30));
 
-        Connect.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        Connect.setText("Connect");
-        Connect.addActionListener(new java.awt.event.ActionListener() {
+        btnConnect.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnConnect.setText("Connect");
+        btnConnect.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ConnectActionPerformed(evt);
+                btnConnectActionPerformed(evt);
             }
         });
-        Background.add(Connect, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 10, 110, 30));
+        panBackground.add(btnConnect, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 10, 110, 30));
 
-        Sync.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        Sync.setText("Sincronizar Dados");
-        Sync.addActionListener(new java.awt.event.ActionListener() {
+        btnSync.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnSync.setText("Sincronizar Dados");
+        btnSync.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SyncActionPerformed(evt);
+                btnSyncActionPerformed(evt);
             }
         });
-        Background.add(Sync, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 10, 180, 30));
+        panBackground.add(btnSync, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 10, 180, 30));
 
-        pesquisa.setLayout(null);
+        panPesquisa.setLayout(null);
 
-        Pesquisa.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        Pesquisa.setText(" [ Pesquisa ]");
-        Pesquisa.setToolTipText("");
-        Pesquisa.setMaximumSize(new java.awt.Dimension(120, 16));
-        Pesquisa.setMinimumSize(new java.awt.Dimension(120, 16));
-        pesquisa.add(Pesquisa);
-        Pesquisa.setBounds(0, 0, 100, 30);
+        lblPesquisa.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lblPesquisa.setText(" [ Pesquisa ]");
+        lblPesquisa.setToolTipText("");
+        lblPesquisa.setMaximumSize(new java.awt.Dimension(120, 16));
+        lblPesquisa.setMinimumSize(new java.awt.Dimension(120, 16));
+        panPesquisa.add(lblPesquisa);
+        lblPesquisa.setBounds(0, 0, 100, 30);
 
-        faunaFlora1.setText("  Fauna/Flora");
-        pesquisa.add(faunaFlora1);
-        faunaFlora1.setBounds(10, 30, 80, 20);
+        lblFaunaFlora.setText("  Fauna/Flora");
+        panPesquisa.add(lblFaunaFlora);
+        lblFaunaFlora.setBounds(10, 30, 80, 20);
 
-        opFaunaFlora.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Fauna", "Flora" }));
-        opFaunaFlora.addActionListener(new java.awt.event.ActionListener() {
+        cbFaunaFlora.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Fauna", "Flora" }));
+        cbFaunaFlora.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                opFaunaFloraActionPerformed(evt);
+                cbFaunaFloraActionPerformed(evt);
             }
         });
-        pesquisa.add(opFaunaFlora);
-        opFaunaFlora.setBounds(0, 50, 130, 30);
+        panPesquisa.add(cbFaunaFlora);
+        cbFaunaFlora.setBounds(0, 50, 130, 30);
 
-        grupo.setText("Grupo");
-        pesquisa.add(grupo);
-        grupo.setBounds(170, 30, 40, 20);
+        lblGrupo.setText("Grupo");
+        panPesquisa.add(lblGrupo);
+        lblGrupo.setBounds(170, 30, 40, 20);
 
-        opGrupo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "firebase..." }));
-        opGrupo.addActionListener(new java.awt.event.ActionListener() {
+        cbGrupo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "firebase..." }));
+        cbGrupo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                opGrupoActionPerformed(evt);
+                cbGrupoActionPerformed(evt);
             }
         });
-        pesquisa.add(opGrupo);
-        opGrupo.setBounds(160, 50, 140, 30);
+        panPesquisa.add(cbGrupo);
+        cbGrupo.setBounds(160, 50, 140, 30);
 
-        familia.setText("Familia");
-        pesquisa.add(familia);
-        familia.setBounds(340, 30, 340, 20);
+        lblFamilia.setText("Familia");
+        panPesquisa.add(lblFamilia);
+        lblFamilia.setBounds(340, 30, 340, 20);
 
-        opFamilia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "firebase..." }));
-        opFamilia.addActionListener(new java.awt.event.ActionListener() {
+        cbFamilia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "firebase..." }));
+        cbFamilia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                opFamiliaActionPerformed(evt);
+                cbFamiliaActionPerformed(evt);
             }
         });
-        pesquisa.add(opFamilia);
-        opFamilia.setBounds(330, 50, 290, 30);
+        panPesquisa.add(cbFamilia);
+        cbFamilia.setBounds(330, 50, 290, 30);
 
-        especie.setText("Especie");
-        pesquisa.add(especie);
-        especie.setBounds(660, 30, 60, 16);
+        lblEspecie.setText("Especie");
+        panPesquisa.add(lblEspecie);
+        lblEspecie.setBounds(660, 30, 60, 16);
 
         txtEspecie.setText("input para pesquisa firebase...");
         txtEspecie.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        pesquisa.add(txtEspecie);
+        panPesquisa.add(txtEspecie);
         txtEspecie.setBounds(650, 50, 180, 30);
 
-        bioma.setText("Bioma");
-        pesquisa.add(bioma);
-        bioma.setBounds(860, 30, 60, 16);
+        lblBioma.setText("Bioma");
+        panPesquisa.add(lblBioma);
+        lblBioma.setBounds(860, 30, 60, 16);
 
         txtBioma.setText("input para pesquisa firebase...");
         txtBioma.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        pesquisa.add(txtBioma);
+        panPesquisa.add(txtBioma);
         txtBioma.setBounds(850, 50, 180, 30);
 
-        pesquisar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        pesquisar.setText("Pesquisar");
-        pesquisar.addActionListener(new java.awt.event.ActionListener() {
+        btnPesquisar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnPesquisar.setText("Pesquisar");
+        btnPesquisar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pesquisarActionPerformed(evt);
+                btnPesquisarActionPerformed(evt);
             }
         });
-        pesquisa.add(pesquisar);
-        pesquisar.setBounds(1100, 30, 140, 50);
+        panPesquisa.add(btnPesquisar);
+        btnPesquisar.setBounds(1100, 30, 140, 50);
 
-        limparPesquisa.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        limparPesquisa.setText("Limpar");
-        limparPesquisa.addActionListener(new java.awt.event.ActionListener() {
+        btnLimparPesquisa.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnLimparPesquisa.setText("Limpar");
+        btnLimparPesquisa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                limparPesquisaActionPerformed(evt);
+                btnLimparPesquisaActionPerformed(evt);
             }
         });
-        pesquisa.add(limparPesquisa);
-        limparPesquisa.setBounds(1100, 90, 140, 50);
+        panPesquisa.add(btnLimparPesquisa);
+        btnLimparPesquisa.setBounds(1100, 90, 140, 50);
 
-        catAmeaca.setText("Categoria de Ameaça");
-        pesquisa.add(catAmeaca);
-        catAmeaca.setBounds(10, 90, 120, 16);
+        lblCatAmeaca.setText("Categoria de Ameaça");
+        panPesquisa.add(lblCatAmeaca);
+        lblCatAmeaca.setBounds(10, 90, 120, 16);
 
         txtAmeaca.setText("input para pesquisa firebase...");
-        pesquisa.add(txtAmeaca);
+        panPesquisa.add(txtAmeaca);
         txtAmeaca.setBounds(0, 110, 300, 30);
 
-        prinAmeaca.setText("Principais Ameaças");
-        pesquisa.add(prinAmeaca);
-        prinAmeaca.setBounds(340, 90, 120, 16);
+        lblPrinAmeaca.setText("Principais Ameaças");
+        panPesquisa.add(lblPrinAmeaca);
+        lblPrinAmeaca.setBounds(340, 90, 120, 16);
 
         txtPrinAmeaca.setText("input para pesquisa firebase...");
-        pesquisa.add(txtPrinAmeaca);
+        panPesquisa.add(txtPrinAmeaca);
         txtPrinAmeaca.setBounds(330, 110, 290, 30);
 
-        nomeComum.setText("Nome Comum");
-        pesquisa.add(nomeComum);
-        nomeComum.setBounds(660, 90, 90, 16);
+        lblNomeComum.setText("Nome Comum");
+        panPesquisa.add(lblNomeComum);
+        lblNomeComum.setBounds(660, 90, 90, 16);
 
         txtNomeComum.setText("input para pesquisa firebase...");
-        pesquisa.add(txtNomeComum);
+        panPesquisa.add(txtNomeComum);
         txtNomeComum.setBounds(650, 110, 180, 30);
 
-        estadosOcorrencia.setText("Estado de Ocorrencia");
-        pesquisa.add(estadosOcorrencia);
-        estadosOcorrencia.setBounds(860, 90, 90, 16);
+        lblEstadosOcorrencia.setText("Estado de Ocorrencia");
+        panPesquisa.add(lblEstadosOcorrencia);
+        lblEstadosOcorrencia.setBounds(860, 90, 90, 16);
 
         txtOcorrencia.setText("input para pesquisa firebase...");
-        pesquisa.add(txtOcorrencia);
+        panPesquisa.add(txtOcorrencia);
         txtOcorrencia.setBounds(850, 110, 180, 30);
 
-        Background.add(pesquisa, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 1240, 160));
+        panBackground.add(panPesquisa, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 1240, 160));
 
-        respostaServer.setBorder(new javax.swing.border.MatteBorder(null));
-        Background.add(respostaServer, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 1240, 470));
+        panRespostaServer.setBorder(new javax.swing.border.MatteBorder(null));
+        panBackground.add(panRespostaServer, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 1240, 470));
 
-        getContentPane().add(Background, java.awt.BorderLayout.CENTER);
+        getContentPane().add(panBackground, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void ConnectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConnectActionPerformed
+    private void btnConnectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConnectActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ConnectActionPerformed
+        
+    }//GEN-LAST:event_btnConnectActionPerformed
 
-    private void SyncActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SyncActionPerformed
+    private void btnSyncActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSyncActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_SyncActionPerformed
+    }//GEN-LAST:event_btnSyncActionPerformed
 
-    private void opFaunaFloraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opFaunaFloraActionPerformed
+    private void cbFaunaFloraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbFaunaFloraActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_opFaunaFloraActionPerformed
+    }//GEN-LAST:event_cbFaunaFloraActionPerformed
 
-    private void FecharActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FecharActionPerformed
+    private void btnFecharActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFecharActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_FecharActionPerformed
+    }//GEN-LAST:event_btnFecharActionPerformed
 
-    private void limparPesquisaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limparPesquisaActionPerformed
+    private void btnLimparPesquisaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparPesquisaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_limparPesquisaActionPerformed
+    }//GEN-LAST:event_btnLimparPesquisaActionPerformed
 
-    private void pesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pesquisarActionPerformed
+    private void btnPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_pesquisarActionPerformed
+    }//GEN-LAST:event_btnPesquisarActionPerformed
 
-    private void opGrupoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opGrupoActionPerformed
+    private void cbGrupoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbGrupoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_opGrupoActionPerformed
+    }//GEN-LAST:event_cbGrupoActionPerformed
 
-    private void opFamiliaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opFamiliaActionPerformed
+    private void cbFamiliaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbFamiliaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_opFamiliaActionPerformed
+    }//GEN-LAST:event_cbFamiliaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -275,27 +278,27 @@ public class Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel Background;
-    private javax.swing.JButton Connect;
-    private javax.swing.JButton Fechar;
-    private javax.swing.JLabel Pesquisa;
-    private javax.swing.JButton Sync;
-    private javax.swing.JLabel bioma;
-    private javax.swing.JLabel catAmeaca;
-    private javax.swing.JLabel especie;
-    private javax.swing.JLabel estadosOcorrencia;
-    private javax.swing.JLabel familia;
-    private javax.swing.JLabel faunaFlora1;
-    private javax.swing.JLabel grupo;
-    private javax.swing.JButton limparPesquisa;
-    private javax.swing.JLabel nomeComum;
-    private javax.swing.JComboBox<String> opFamilia;
-    private javax.swing.JComboBox<String> opFaunaFlora;
-    private javax.swing.JComboBox<String> opGrupo;
-    private javax.swing.JPanel pesquisa;
-    private javax.swing.JButton pesquisar;
-    private javax.swing.JLabel prinAmeaca;
-    private javax.swing.JPanel respostaServer;
+    private javax.swing.JButton btnConnect;
+    private javax.swing.JButton btnFechar;
+    private javax.swing.JButton btnLimparPesquisa;
+    private javax.swing.JButton btnPesquisar;
+    private javax.swing.JButton btnSync;
+    private javax.swing.JComboBox<String> cbFamilia;
+    private javax.swing.JComboBox<String> cbFaunaFlora;
+    private javax.swing.JComboBox<String> cbGrupo;
+    private javax.swing.JLabel lblBioma;
+    private javax.swing.JLabel lblCatAmeaca;
+    private javax.swing.JLabel lblEspecie;
+    private javax.swing.JLabel lblEstadosOcorrencia;
+    private javax.swing.JLabel lblFamilia;
+    private javax.swing.JLabel lblFaunaFlora;
+    private javax.swing.JLabel lblGrupo;
+    private javax.swing.JLabel lblNomeComum;
+    private javax.swing.JLabel lblPesquisa;
+    private javax.swing.JLabel lblPrinAmeaca;
+    private javax.swing.JPanel panBackground;
+    private javax.swing.JPanel panPesquisa;
+    private javax.swing.JPanel panRespostaServer;
     private javax.swing.JTextField txtAmeaca;
     private javax.swing.JTextField txtBioma;
     private javax.swing.JTextField txtEspecie;
