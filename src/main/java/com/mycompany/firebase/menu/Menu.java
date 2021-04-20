@@ -7,12 +7,12 @@ import static com.mycompany.firebase.util.Common.initFirebase;
  */
 public class Menu extends javax.swing.JFrame {
 
-    public Menu() {
-        initComponents();
-        
-        initFirebase();
-    }
-
+    private String op;
+    private String colunas[] = {"Fauna/Flora", "Grupo", "Família", "Espécie (Simplificado)", "Nome Comum", "Categoria de Ameaça", "Bioma", "Principais Ameaças", "Estados de Ocorrência"};
+    private ArrayList<SpcModel> lista = new ArrayList<SpcModel>();
+    private MenuJTable tabela;
+    private DatabaseReference usuariosFirebase = FirebaseDatabase.getInstance().getReference().child("masterSheet");
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {

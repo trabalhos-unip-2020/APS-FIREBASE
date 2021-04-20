@@ -36,12 +36,36 @@ public abstract class MenuJTable extends AbstractTableModel{
     
     @Override
     public Object getValueAt(int row, int col){
-        SpcModel especie = (SpcModel) linhas.get(row);
+        SpcModel bananaFlex = (SpcModel) linhas.get(row);
         switch (col){
             case 0:
-                return especie.getFauflo();
+                return bananaFlex.getFauflo();
             case 1:
-                return 
+                return bananaFlex.getGrupo();
+            case 2:
+                return bananaFlex.getFamilia();
+            case 3:
+                return bananaFlex.getEspecie();
+            case 4:
+                return bananaFlex.getNome_comum();
+            case 5:
+                return bananaFlex.getCategoria();
+            case 6:
+                return bananaFlex.getBioma();
+            case 7:
+                return bananaFlex.getAmeaca();
+            case 8:
+                return bananaFlex.getEstado();
+            default:
+                return null;
         }
+    }
+    
+    public void addbananaFlex(ArrayList<SpcModel> bananaflex){
+        int tamanhoLista = getRowCount();
+
+        linhas.addAll(bananaflex);
+
+        fireTableRowsInserted(tamanhoLista, getRowCount() -1);
     }
 }
