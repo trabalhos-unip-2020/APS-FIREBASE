@@ -1,6 +1,10 @@
 package com.mycompany.firebase.menu;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.mycompany.firebase.model.SpcModel;
 import static com.mycompany.firebase.util.Common.initFirebase;
+import java.util.ArrayList;
 /**
  *
  * @author Diogo Enrico Marianna
@@ -11,8 +15,11 @@ public class Menu extends javax.swing.JFrame {
     private String colunas[] = {"Fauna/Flora", "Grupo", "Família", "Espécie (Simplificado)", "Nome Comum", "Categoria de Ameaça", "Bioma", "Principais Ameaças", "Estados de Ocorrência"};
     private ArrayList<SpcModel> lista = new ArrayList<SpcModel>();
     private MenuJTable tabela;
-    private DatabaseReference usuariosFirebase = FirebaseDatabase.getInstance().getReference().child("masterSheet");
+    private DatabaseReference spcFirebase = FirebaseDatabase.getInstance().getReference().child("masterSheet");
     
+    private String getOp(){
+        return op;
+    }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
