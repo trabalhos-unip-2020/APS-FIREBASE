@@ -1,24 +1,31 @@
 package com.mycompany.firebase.menu;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.internal.NonNull;
 import com.mycompany.firebase.model.SpcModel;
 import static com.mycompany.firebase.util.Common.initFirebase;
 import java.util.ArrayList;
+import com.mycompany.firebase.util.CsvConvert;
+import javax.swing.JOptionPane;
+import javax.swing.ListSelectionModel;
 /**
  *
  * @author Diogo Enrico Marianna
  */
 public class Menu extends javax.swing.JFrame {
 
-    private String op;
+    private DatabaseReference spcRef = FirebaseDatabase.getInstance().getReference().child("bananinha");
     private String colunas[] = {"Fauna/Flora", "Grupo", "Família", "Espécie (Simplificado)", "Nome Comum", "Categoria de Ameaça", "Bioma", "Principais Ameaças", "Estados de Ocorrência"};
     private ArrayList<SpcModel> lista = new ArrayList<SpcModel>();
     private MenuJTable tabela;
-    private DatabaseReference spcFirebase = FirebaseDatabase.getInstance().getReference().child("masterSheet");
     
-    private String getOp(){
-        return op;
+    
+    public Menu() {
+        initComponents();
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -142,7 +149,7 @@ public class Menu extends javax.swing.JFrame {
 
         lblEspecie.setText("Espécie");
         panPesquisa.add(lblEspecie);
-        lblEspecie.setBounds(660, 30, 60, 14);
+        lblEspecie.setBounds(660, 30, 60, 16);
 
         txtEspecie.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         panPesquisa.add(txtEspecie);
@@ -150,7 +157,7 @@ public class Menu extends javax.swing.JFrame {
 
         lblBioma.setText("Bioma");
         panPesquisa.add(lblBioma);
-        lblBioma.setBounds(860, 30, 60, 14);
+        lblBioma.setBounds(860, 30, 60, 16);
 
         txtBioma.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         panPesquisa.add(txtBioma);
@@ -178,25 +185,25 @@ public class Menu extends javax.swing.JFrame {
 
         lblCatAmeaca.setText("Categoria de Ameaça");
         panPesquisa.add(lblCatAmeaca);
-        lblCatAmeaca.setBounds(10, 90, 120, 14);
+        lblCatAmeaca.setBounds(10, 90, 120, 16);
         panPesquisa.add(txtAmeaca);
         txtAmeaca.setBounds(0, 110, 300, 30);
 
         lblPrinAmeaca.setText("Principais Ameaças");
         panPesquisa.add(lblPrinAmeaca);
-        lblPrinAmeaca.setBounds(340, 90, 120, 14);
+        lblPrinAmeaca.setBounds(340, 90, 120, 16);
         panPesquisa.add(txtPrinAmeaca);
         txtPrinAmeaca.setBounds(330, 110, 290, 30);
 
         lblNomeComum.setText("Nome Comum");
         panPesquisa.add(lblNomeComum);
-        lblNomeComum.setBounds(660, 90, 90, 14);
+        lblNomeComum.setBounds(660, 90, 90, 16);
         panPesquisa.add(txtNomeComum);
         txtNomeComum.setBounds(650, 110, 180, 30);
 
         lblEstadosOcorrencia.setText("Estado de Ocorrencia");
         panPesquisa.add(lblEstadosOcorrencia);
-        lblEstadosOcorrencia.setBounds(860, 90, 110, 14);
+        lblEstadosOcorrencia.setBounds(860, 90, 110, 16);
         panPesquisa.add(txtOcorrencia);
         txtOcorrencia.setBounds(850, 110, 180, 30);
 
@@ -258,11 +265,18 @@ public class Menu extends javax.swing.JFrame {
 
     private void btnConnectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConnectActionPerformed
         // TODO add your handling code here:
-        
+        try{
+            initFirebase();
+        }catch(Exception e){
+            
+        }
     }//GEN-LAST:event_btnConnectActionPerformed
 
     private void btnSyncActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSyncActionPerformed
         // TODO add your handling code here:
+        //String valor = (String) cbFaunaFlora.getSelectedItem();
+        //System.out.println(valor);
+        syncBananinha();
     }//GEN-LAST:event_btnSyncActionPerformed
 
     private void cbFaunaFloraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbFaunaFloraActionPerformed
@@ -288,7 +302,33 @@ public class Menu extends javax.swing.JFrame {
     private void cbFamiliaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbFamiliaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cbFamiliaActionPerformed
+    
+    private void syncBananinha(){
+        try{
+            spcRef.addValueEventListener(new ValueEventListener() {
+                
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot){
+                    lista.clear();
+                    
+                    for(DataSnapshot ds : dataSnapshot.getChildren()) {
+                        SpcModel bananinha = ds.getValue(SpcModel.class);
+                        lista.add(bananinha);
+                    }
+                    tabela = new MenuJTable(lista, colunas);
+                    tabRespostaServer.setModel(tabela);
+                    tabRespostaServer.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+                }
 
+                @Override
+                public void onCancelled(DatabaseError e) {
+                    JOptionPane.showMessageDialog(null, "Consulta Cancelada \n" + e.getMessage());
+                }
+                });
+        }catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Erro na Consulta\n" + e.getMessage());
+        }
+    }
     /**
      * @param args the command line arguments
      */
@@ -300,7 +340,7 @@ public class Menu extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Windows".equals(info.getName())) {
+                if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
