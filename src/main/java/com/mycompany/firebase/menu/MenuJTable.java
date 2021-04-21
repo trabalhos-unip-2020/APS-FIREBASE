@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import javax.swing.table.AbstractTableModel;
 import com.mycompany.firebase.model.SpcModel;
 
-public abstract class MenuJTable extends AbstractTableModel{
+public class MenuJTable extends AbstractTableModel{
     
     private ArrayList<SpcModel> linhas;
     String[] colunas;

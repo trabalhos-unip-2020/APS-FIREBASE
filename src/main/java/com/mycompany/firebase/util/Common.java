@@ -20,12 +20,14 @@ public class Common {
         FileInputStream serviceAccount =
           null;
         try {
+            System.out.println("tentando conexão com firebase....");
             serviceAccount = new FileInputStream("credencials.json");
             FirebaseOptions options = new FirebaseOptions.Builder()
                     .setCredentials(GoogleCredentials.fromStream(serviceAccount))
-                    .setDatabaseUrl("https://jswing-api-default-rtdb.firebaseio.com")
+                    .setDatabaseUrl("https://apijswing-default-rtdb.firebaseio.com")
                     .build();
             FirebaseApp.initializeApp(options);
+            System.out.println();
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Common.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
