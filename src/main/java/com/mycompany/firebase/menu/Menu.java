@@ -351,6 +351,7 @@ public class Menu extends javax.swing.JFrame {
         String grupo = (String)cbGrupo.getSelectedItem();
         String familia = (String)cbFamilia.getSelectedItem();
         
+        
     }
 
     public static void main(String args[]) {
