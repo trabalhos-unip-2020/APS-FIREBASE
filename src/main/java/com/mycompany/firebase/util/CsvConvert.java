@@ -26,9 +26,14 @@ public class CsvConvert {
     private final FirebaseDatabase database = FirebaseDatabase.getInstance();
     private final DatabaseReference spcRef = database.getReference().child("bananinha");
     
-    public CsvConvert(boolean clear) {
+//    public CsvConvert(boolean clear) {
+//
+//        csvConvert(clear);
+//    }
 
+    public CsvConvert(boolean clear) {
         csvConvert(clear);
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     private void csvConvert(boolean clear) {

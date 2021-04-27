@@ -18,9 +18,10 @@ import javax.swing.ListSelectionModel;
  */
 public class Menu extends javax.swing.JFrame {
 
-    private DatabaseReference spcRef = FirebaseDatabase.getInstance().getReference().child("bananinha");
+    private DatabaseReference spcRef = FirebaseDatabase.getInstance().getReference().child("SPC");
     private String colunas[] = {"Fauna/Flora", "Grupo", "Família", "Espécie (Simplificado)", "Nome Comum", "Categoria de Ameaça", "Bioma", "Principais Ameaças", "Estados de Ocorrência"};
     private ArrayList<SpcModel> lista = new ArrayList<SpcModel>();
+    private ArrayList<SpcModel> resultLista = new ArrayList<SpcModel>();
     private MenuJTable tabela;
     
     
@@ -285,6 +286,7 @@ public class Menu extends javax.swing.JFrame {
 
     private void btnFecharActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFecharActionPerformed
         // TODO add your handling code here:
+        dispose();
     }//GEN-LAST:event_btnFecharActionPerformed
 
     private void btnLimparPesquisaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparPesquisaActionPerformed
@@ -304,34 +306,53 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_cbFamiliaActionPerformed
     
     private void syncBananinha(){
-        try{
+        CsvConvert csv = new CsvConvert(true);
+        
+        try {
             spcRef.addValueEventListener(new ValueEventListener() {
-                
+
                 @Override
-                public void onDataChange(@NonNull DataSnapshot dataSnapshot){
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                     lista.clear();
-                    
-                    for(DataSnapshot ds : dataSnapshot.getChildren()) {
-                        SpcModel bananinha = ds.getValue(SpcModel.class);
-                        lista.add(bananinha);
+
+                    for (DataSnapshot ds : dataSnapshot.getChildren()) {
+                        SpcModel especies = ds.getValue(SpcModel.class);
+                        lista.add(especies);
                     }
                     tabela = new MenuJTable(lista, colunas);
                     tabRespostaServer.setModel(tabela);
                     tabRespostaServer.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+//                    jTable1.setText("");
                 }
 
                 @Override
                 public void onCancelled(DatabaseError e) {
                     JOptionPane.showMessageDialog(null, "Consulta Cancelada \n" + e.getMessage());
+
                 }
-                });
-        }catch (Exception e) {
+
+            });
+            System.out.println(lista);
+        } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Erro na Consulta\n" + e.getMessage());
         }
     }
-    /**
-     * @param args the command line arguments
-     */
+    private void filterBananinha(){
+        //ArrayList<SPC>;
+        resultLista.clear();
+        String bioma = txtBioma.getText().toLowerCase().trim();
+        String nomeComun = txtNomeComum.getText().toLowerCase().trim();
+        String especie = txtNomeComum.getText().toLowerCase().trim();
+        String catAmeaca = txtNomeComum.getText().toLowerCase().trim();
+        String prinAmeaca = txtNomeComum.getText().toLowerCase().trim();
+        String estadoOcorrencia = txtNomeComum.getText().toLowerCase().trim();
+        
+        String faunaFlora = (String)cbFaunaFlora.getSelectedItem();
+        String grupo = (String)cbGrupo.getSelectedItem();
+        String familia = (String)cbFamilia.getSelectedItem();
+        
+    }
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
