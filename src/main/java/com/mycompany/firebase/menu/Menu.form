@@ -144,9 +144,10 @@
             <Component class="javax.swing.JComboBox" name="cbFaunaFlora">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="2">
-                    <StringItem index="0" value="Fauna"/>
-                    <StringItem index="1" value="Flora"/>
+                  <StringArray count="3">
+                    <StringItem index="0" value="Selecionar"/>
+                    <StringItem index="1" value="Fauna"/>
+                    <StringItem index="2" value="Flora"/>
                   </StringArray>
                 </Property>
               </Properties>
@@ -175,7 +176,21 @@
             <Component class="javax.swing.JComboBox" name="cbGrupo">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="0"/>
+                  <StringArray count="13">
+                    <StringItem index="0" value="Selecionar"/>
+                    <StringItem index="1" value="Anf&#xed;bios"/>
+                    <StringItem index="2" value="Angiospermas"/>
+                    <StringItem index="3" value="Aves"/>
+                    <StringItem index="4" value="Bri&#xf4;fitas"/>
+                    <StringItem index="5" value="Gimnospermas"/>
+                    <StringItem index="6" value="Invertebrados Aqu&#xe1;ticos"/>
+                    <StringItem index="7" value="Invertebrados Terrestres"/>
+                    <StringItem index="8" value="Mam&#xed;feros"/>
+                    <StringItem index="9" value="Peixes Continentais"/>
+                    <StringItem index="10" value="Peixes Marinhos"/>
+                    <StringItem index="11" value="Pterid&#xf3;fitas"/>
+                    <StringItem index="12" value="R&#xe9;pteis"/>
+                  </StringArray>
                 </Property>
               </Properties>
               <Events>
@@ -203,7 +218,435 @@
             <Component class="javax.swing.JComboBox" name="cbFamilia">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="0"/>
+                  <StringArray count="427">
+                    <StringItem index="0" value="Selecionar"/>
+                    <StringItem index="1" value="Salicaceae"/>
+                    <StringItem index="2" value="Cracidae"/>
+                    <StringItem index="3" value="Malvaceae"/>
+                    <StringItem index="4" value="Santalaceae"/>
+                    <StringItem index="5" value="Myrtaceae"/>
+                    <StringItem index="6" value="Coenagrionidae"/>
+                    <StringItem index="7" value="Hypogastruridae"/>
+                    <StringItem index="8" value="Plantaginaceae"/>
+                    <StringItem index="9" value="Achiridae"/>
+                    <StringItem index="10" value="Orchidaceae"/>
+                    <StringItem index="11" value="Asteraceae"/>
+                    <StringItem index="12" value="Furnariidae"/>
+                    <StringItem index="13" value="Arecaceae"/>
+                    <StringItem index="14" value="Eriocaulaceae"/>
+                    <StringItem index="15" value="Nymphalidae"/>
+                    <StringItem index="16" value="Baetidae"/>
+                    <StringItem index="17" value="Eleutherodactylidae"/>
+                    <StringItem index="18" value="Bignoniaceae"/>
+                    <StringItem index="19" value="Euphorbiaceae"/>
+                    <StringItem index="20" value="Pteridaceae"/>
+                    <StringItem index="21" value="Bromeliaceae"/>
+                    <StringItem index="22" value="Aeglidae"/>
+                    <StringItem index="23" value="Fabaceae"/>
+                    <StringItem index="24" value="Orobanchaceae"/>
+                    <StringItem index="25" value="Hylidae"/>
+                    <StringItem index="26" value="Poaceae"/>
+                    <StringItem index="27" value="Pimelodidae"/>
+                    <StringItem index="28" value="Lauraceae"/>
+                    <StringItem index="29" value="Cricetidae"/>
+                    <StringItem index="30" value="Polypodiaceae"/>
+                    <StringItem index="31" value="Tyrannidae"/>
+                    <StringItem index="32" value="Sphingidae"/>
+                    <StringItem index="33" value="Aromobatidae"/>
+                    <StringItem index="34" value="Rutaceae"/>
+                    <StringItem index="35" value="Alopiidae"/>
+                    <StringItem index="36" value="Atelidae"/>
+                    <StringItem index="37" value="Verbenaceae"/>
+                    <StringItem index="38" value="Rubiaceae"/>
+                    <StringItem index="39" value="Alstroemeriaceae"/>
+                    <StringItem index="40" value="Amaranthaceae"/>
+                    <StringItem index="41" value="Lucanidae"/>
+                    <StringItem index="42" value="Accipitridae"/>
+                    <StringItem index="43" value="Psittacidae"/>
+                    <StringItem index="44" value="Teiidae"/>
+                    <StringItem index="45" value="Typhlopidae"/>
+                    <StringItem index="46" value="Amphisbanidae"/>
+                    <StringItem index="47" value="Lampyridae"/>
+                    <StringItem index="48" value="Rivulidae"/>
+                    <StringItem index="49" value="Buthidae"/>
+                    <StringItem index="50" value="Loricariidae"/>
+                    <StringItem index="51" value="Anemiaceae"/>
+                    <StringItem index="52" value="Annonaceae"/>
+                    <StringItem index="53" value="Formicidae"/>
+                    <StringItem index="54" value="Araceae"/>
+                    <StringItem index="55" value="Motacillidae"/>
+                    <StringItem index="56" value="Pipridae"/>
+                    <StringItem index="57" value="Loasaceae"/>
+                    <StringItem index="58" value="Parodontidae"/>
+                    <StringItem index="59" value="Acanthaceae"/>
+                    <StringItem index="60" value="Characidae"/>
+                    <StringItem index="61" value="Dipsadidae"/>
+                    <StringItem index="62" value="Apteronotidae"/>
+                    <StringItem index="63" value="Araucariaceae"/>
+                    <StringItem index="64" value="Lycaenidae"/>
+                    <StringItem index="65" value="Andrenidae"/>
+                    <StringItem index="66" value="Aristolochiaceae"/>
+                    <StringItem index="67" value="Passerelidae"/>
+                    <StringItem index="68" value="Arrhopalitidae"/>
+                    <StringItem index="69" value="Cactaceae"/>
+                    <StringItem index="70" value="Aspleniaceae"/>
+                    <StringItem index="71" value="Cyclanthaceae"/>
+                    <StringItem index="72" value="Astropectinidae"/>
+                    <StringItem index="73" value="Canidae"/>
+                    <StringItem index="74" value="Scarabaeidae"/>
+                    <StringItem index="75" value="Arhynchobatidae"/>
+                    <StringItem index="76" value="Dicranaceae"/>
+                    <StringItem index="77" value="Trochilidae"/>
+                    <StringItem index="78" value="Theraphosidae"/>
+                    <StringItem index="79" value="Gymnophthalmidae"/>
+                    <StringItem index="80" value="Balaenopteridae"/>
+                    <StringItem index="81" value="Malpighiaceae"/>
+                    <StringItem index="82" value="Velloziaceae"/>
+                    <StringItem index="83" value="Begoniaceae"/>
+                    <StringItem index="84" value="Berberidaceae"/>
+                    <StringItem index="85" value="Lecythidaceae"/>
+                    <StringItem index="86" value="Melastomataceae"/>
+                    <StringItem index="87" value="Gesneriaceae"/>
+                    <StringItem index="88" value="Cervidae"/>
+                    <StringItem index="89" value="Blechnaceae"/>
+                    <StringItem index="90" value="Lejeuneaceae"/>
+                    <StringItem index="91" value="Plethodontidae"/>
+                    <StringItem index="92" value="Calyceraceae"/>
+                    <StringItem index="93" value="Viperidae"/>
+                    <StringItem index="94" value="Bouchardiidae"/>
+                    <StringItem index="95" value="Brachycephalidae"/>
+                    <StringItem index="96" value="Hypopomidae"/>
+                    <StringItem index="97" value="Bradypodidae"/>
+                    <StringItem index="98" value="Mabuyidae"/>
+                    <StringItem index="99" value="Prodidomidae"/>
+                    <StringItem index="100" value="Hedwigiaceae"/>
+                    <StringItem index="101" value="Combretaceae"/>
+                    <StringItem index="102" value="Scrophulariaceae"/>
+                    <StringItem index="103" value="Cyperaceae"/>
+                    <StringItem index="104" value="Burseraceae"/>
+                    <StringItem index="105" value="Pitheciidae"/>
+                    <StringItem index="106" value="Solanaceae"/>
+                    <StringItem index="107" value="Scolopacidae"/>
+                    <StringItem index="108" value="Vochysiaceae"/>
+                    <StringItem index="109" value="Echimyidae"/>
+                    <StringItem index="110" value="Callitrichidae"/>
+                    <StringItem index="111" value="Didelphidae"/>
+                    <StringItem index="112" value="Platyrinchidae"/>
+                    <StringItem index="113" value="Dendrocolaptidae"/>
+                    <StringItem index="114" value="Capitonidae"/>
+                    <StringItem index="115" value="Carcharhinidae"/>
+                    <StringItem index="116" value="Odontaspididae"/>
+                    <StringItem index="117" value="Lamnidae"/>
+                    <StringItem index="118" value="Gecarcinidae"/>
+                    <StringItem index="119" value="Cheloniidae"/>
+                    <StringItem index="120" value="Cotingidae"/>
+                    <StringItem index="121" value="Lycidae"/>
+                    <StringItem index="122" value="Cardinalidae"/>
+                    <StringItem index="123" value="Cassidulidae"/>
+                    <StringItem index="124" value="Simaroubaceae"/>
+                    <StringItem index="125" value="Aeshnidae"/>
+                    <StringItem index="126" value="Caviidae"/>
+                    <StringItem index="127" value="Cebidae"/>
+                    <StringItem index="128" value="Meliaceae"/>
+                    <StringItem index="129" value="Ctenidae"/>
+                    <StringItem index="130" value="Picidae"/>
+                    <StringItem index="131" value="Ciidae"/>
+                    <StringItem index="132" value="Thamnophilidae"/>
+                    <StringItem index="133" value="Microdesmidae"/>
+                    <StringItem index="134" value="Cetorhinidae"/>
+                    <StringItem index="135" value="Erethizontidae"/>
+                    <StringItem index="136" value="Formicariidae"/>
+                    <StringItem index="137" value="Crenuchidae"/>
+                    <StringItem index="138" value="Charadriidae"/>
+                    <StringItem index="139" value="Charinidae"/>
+                    <StringItem index="140" value="Pieridae"/>
+                    <StringItem index="141" value="Heptapteridae"/>
+                    <StringItem index="142" value="Microhylidae"/>
+                    <StringItem index="143" value="Oleaceae"/>
+                    <StringItem index="144" value="Serranidae"/>
+                    <StringItem index="145" value="Dithrichaceae"/>
+                    <StringItem index="146" value="Sapotaceae"/>
+                    <StringItem index="147" value="Turdidae"/>
+                    <StringItem index="148" value="Vitaceae"/>
+                    <StringItem index="149" value="Columbidae"/>
+                    <StringItem index="150" value="Clusiaceae"/>
+                    <StringItem index="151" value="Poeciliidae"/>
+                    <StringItem index="152" value="Carabidae"/>
+                    <StringItem index="153" value="Sphaerodactylidae"/>
+                    <StringItem index="154" value="Rhamnaceae"/>
+                    <StringItem index="155" value="Actiniidae"/>
+                    <StringItem index="156" value="Conopophagidae"/>
+                    <StringItem index="157" value="Thraupidae"/>
+                    <StringItem index="158" value="Dytiscidae"/>
+                    <StringItem index="159" value="Boidae"/>
+                    <StringItem index="160" value="Metaniidae"/>
+                    <StringItem index="161" value="Callichthyidae"/>
+                    <StringItem index="162" value="Asteriidae"/>
+                    <StringItem index="163" value="Chrysobalanaceae"/>
+                    <StringItem index="164" value="Crassulaceae"/>
+                    <StringItem index="165" value="Cichlidae"/>
+                    <StringItem index="166" value="Hylodidae"/>
+                    <StringItem index="167" value="Cryptopidae"/>
+                    <StringItem index="168" value="Tinamidae"/>
+                    <StringItem index="169" value="Ctenomyidae"/>
+                    <StringItem index="170" value="Sapindaceae"/>
+                    <StringItem index="171" value="Lythraceae"/>
+                    <StringItem index="172" value="Icteridae"/>
+                    <StringItem index="173" value="Lamiaceae"/>
+                    <StringItem index="174" value="Corvidae"/>
+                    <StringItem index="175" value="Cycloramphidae"/>
+                    <StringItem index="176" value="Dactyloidae"/>
+                    <StringItem index="177" value="Dasyatidae"/>
+                    <StringItem index="178" value="Dilleniaceae"/>
+                    <StringItem index="179" value="Dermochelydae"/>
+                    <StringItem index="180" value="Commelinaceae"/>
+                    <StringItem index="181" value="Dicksoniaceae"/>
+                    <StringItem index="182" value="Diomedeidae"/>
+                    <StringItem index="183" value="Onuphidae"/>
+                    <StringItem index="184" value="Chelodesmidae"/>
+                    <StringItem index="185" value="Dioscoreaceae"/>
+                    <StringItem index="186" value="Lycopodiaceae"/>
+                    <StringItem index="187" value="Hyriidae"/>
+                    <StringItem index="188" value="Saturniidae"/>
+                    <StringItem index="189" value="Apocynaceae"/>
+                    <StringItem index="190" value="Moraceae"/>
+                    <StringItem index="191" value="Hesperiidae"/>
+                    <StringItem index="192" value="Droseraceae"/>
+                    <StringItem index="193" value="Drymusidae"/>
+                    <StringItem index="194" value="Sternopygidae"/>
+                    <StringItem index="195" value="Amaryllidaceae"/>
+                    <StringItem index="196" value="Gobiidae"/>
+                    <StringItem index="197" value="Dryopteridaceae"/>
+                    <StringItem index="198" value="Libellulidae"/>
+                    <StringItem index="199" value="Rhinocryptidae"/>
+                    <StringItem index="200" value="Tripterygiidae"/>
+                    <StringItem index="201" value="Leiosauridae"/>
+                    <StringItem index="202" value="Ephedraceae"/>
+                    <StringItem index="203" value="Epinephelidae"/>
+                    <StringItem index="204" value="Peripatidae"/>
+                    <StringItem index="205" value="Vespertilionidae"/>
+                    <StringItem index="206" value="Apiaceae"/>
+                    <StringItem index="207" value="Erythroxylaceae"/>
+                    <StringItem index="208" value="Escalloniaceae"/>
+                    <StringItem index="209" value="Balaenidae"/>
+                    <StringItem index="210" value="Eukoeneniidae"/>
+                    <StringItem index="211" value="Eunicidae"/>
+                    <StringItem index="212" value="Proteaceae"/>
+                    <StringItem index="213" value="Gonyleptidae"/>
+                    <StringItem index="214" value="Strombidae"/>
+                    <StringItem index="215" value="Pectinidae"/>
+                    <StringItem index="216" value="Convolvulaceae"/>
+                    <StringItem index="217" value="Glossoscolecidae"/>
+                    <StringItem index="218" value="Fregatidae"/>
+                    <StringItem index="219" value="Furipteridae"/>
+                    <StringItem index="220" value="Triakidae"/>
+                    <StringItem index="221" value="Ericaceae"/>
+                    <StringItem index="222" value="Ariidae"/>
+                    <StringItem index="223" value="Lentibulariaceae"/>
+                    <StringItem index="224" value="Scleruridae"/>
+                    <StringItem index="225" value="Ginglymostomatidae"/>
+                    <StringItem index="226" value="Trichomycteridae"/>
+                    <StringItem index="227" value="Glomerodesmidae"/>
+                    <StringItem index="228" value="Phyllostomidae"/>
+                    <StringItem index="229" value="Marantaceae"/>
+                    <StringItem index="230" value="Arnelliaceae"/>
+                    <StringItem index="231" value="Strophocheilidae"/>
+                    <StringItem index="232" value="Grallariidae"/>
+                    <StringItem index="233" value="Gunneraceae"/>
+                    <StringItem index="234" value="Gymnuridae"/>
+                    <StringItem index="235" value="Chactidae"/>
+                    <StringItem index="236" value="Labridae"/>
+                    <StringItem index="237" value="Halichondriidae"/>
+                    <StringItem index="238" value="Dipluridae"/>
+                    <StringItem index="239" value="Doradidae"/>
+                    <StringItem index="240" value="Cistaceae"/>
+                    <StringItem index="241" value="Rhynchocyclidae"/>
+                    <StringItem index="242" value="Papilionidae"/>
+                    <StringItem index="243" value="Leptophlebiidae"/>
+                    <StringItem index="244" value="Heteragrionidae"/>
+                    <StringItem index="245" value="Syngnathidae"/>
+                    <StringItem index="246" value="Craugastoridae"/>
+                    <StringItem index="247" value="Phyllodactylidae"/>
+                    <StringItem index="248" value="Humiriaceae"/>
+                    <StringItem index="249" value="Violaceae"/>
+                    <StringItem index="250" value="Araliaceae"/>
+                    <StringItem index="251" value="Caprimulgidae"/>
+                    <StringItem index="252" value="Vireonidae"/>
+                    <StringItem index="253" value="Hymenophyllaceae"/>
+                    <StringItem index="254" value="Hypericaceae"/>
+                    <StringItem index="255" value="Vesperidae"/>
+                    <StringItem index="256" value="Anostomidae"/>
+                    <StringItem index="257" value="Streptaxidae"/>
+                    <StringItem index="258" value="Corinnidae"/>
+                    <StringItem index="259" value="Ideoroncidae"/>
+                    <StringItem index="260" value="Aquifoliaceae"/>
+                    <StringItem index="261" value="Iniidae"/>
+                    <StringItem index="262" value="Tityridae"/>
+                    <StringItem index="263" value="Myristicaceae"/>
+                    <StringItem index="264" value="Isoetaceae"/>
+                    <StringItem index="265" value="Isotomidae"/>
+                    <StringItem index="266" value="Pallaviciniaceae"/>
+                    <StringItem index="267" value="Anablepidae"/>
+                    <StringItem index="268" value="Riodinidae"/>
+                    <StringItem index="269" value="Jungermanniaceae"/>
+                    <StringItem index="270" value="Istiophoridae"/>
+                    <StringItem index="271" value="Calophyllaceae"/>
+                    <StringItem index="272" value="Latrunculiidae"/>
+                    <StringItem index="273" value="Lebiasinidae"/>
+                    <StringItem index="274" value="Felidae"/>
+                    <StringItem index="275" value="Pottiaceae"/>
+                    <StringItem index="276" value="Ophidiasteridae"/>
+                    <StringItem index="277" value="Linaceae"/>
+                    <StringItem index="278" value="Liolaemidae"/>
+                    <StringItem index="279" value="Campanulaceae"/>
+                    <StringItem index="280" value="Pseudopimelodidae"/>
+                    <StringItem index="281" value="Malacanthidae"/>
+                    <StringItem index="282" value="Luidiidae"/>
+                    <StringItem index="283" value="Lutjanidae"/>
+                    <StringItem index="284" value="Ochnaceae"/>
+                    <StringItem index="285" value="Lymnaeidae"/>
+                    <StringItem index="286" value="Primulaceae"/>
+                    <StringItem index="287" value="Toxopneustidae"/>
+                    <StringItem index="288" value="Odontostomidae"/>
+                    <StringItem index="289" value="Monimiaceae"/>
+                    <StringItem index="290" value="Labrisomidae"/>
+                    <StringItem index="291" value="Mobulidae"/>
+                    <StringItem index="292" value="Marchantiaceae"/>
+                    <StringItem index="293" value="Salticidae"/>
+                    <StringItem index="294" value="Chernetidae"/>
+                    <StringItem index="295" value="Celastraceae"/>
+                    <StringItem index="296" value="Megalobulimidae"/>
+                    <StringItem index="297" value="Megalopidae"/>
+                    <StringItem index="298" value="Bufonidae"/>
+                    <StringItem index="299" value="Apidae"/>
+                    <StringItem index="300" value="Anatidae"/>
+                    <StringItem index="301" value="Chelidae"/>
+                    <StringItem index="302" value="Pholcidae"/>
+                    <StringItem index="303" value="Metzgeriaceae"/>
+                    <StringItem index="304" value="Pomacentridae"/>
+                    <StringItem index="305" value="Phytolaccaceae"/>
+                    <StringItem index="306" value="Milleporidae"/>
+                    <StringItem index="307" value="Momotidae"/>
+                    <StringItem index="308" value="Bucconidae"/>
+                    <StringItem index="309" value="Gelsemiaceae"/>
+                    <StringItem index="310" value="Podostemaceae"/>
+                    <StringItem index="311" value="Mussidae"/>
+                    <StringItem index="312" value="Mycetopodidae"/>
+                    <StringItem index="313" value="Serrasalmidae"/>
+                    <StringItem index="314" value="Myliobatidae"/>
+                    <StringItem index="315" value="Anacardiaceae"/>
+                    <StringItem index="316" value="Myrmecophagidae"/>
+                    <StringItem index="317" value="Myxinidae"/>
+                    <StringItem index="318" value="Natalidae"/>
+                    <StringItem index="319" value="Cuculidae"/>
+                    <StringItem index="320" value="Hexanchidae"/>
+                    <StringItem index="321" value="Nyctibiidae"/>
+                    <StringItem index="322" value="Ochyroceratidae"/>
+                    <StringItem index="323" value="Atherinopsidae"/>
+                    <StringItem index="324" value="Odontophoridae"/>
+                    <StringItem index="325" value="Olividae"/>
+                    <StringItem index="326" value="Ophidiidae"/>
+                    <StringItem index="327" value="Oreasteridae"/>
+                    <StringItem index="328" value="Oxalidaceae"/>
+                    <StringItem index="329" value="Lepidoziaceae"/>
+                    <StringItem index="330" value="Pyralidae"/>
+                    <StringItem index="331" value="Sminthuridae"/>
+                    <StringItem index="332" value="Leptodactylidae"/>
+                    <StringItem index="333" value="Potamotrygonidae"/>
+                    <StringItem index="334" value="Passifloraceae"/>
+                    <StringItem index="335" value="Piperaceae"/>
+                    <StringItem index="336" value="Cryptodesmidae"/>
+                    <StringItem index="337" value="Vermetidae"/>
+                    <StringItem index="338" value="Phaethontidae"/>
+                    <StringItem index="339" value="Phyllanthaceae"/>
+                    <StringItem index="340" value="Veronicellidae"/>
+                    <StringItem index="341" value="Gomphidae"/>
+                    <StringItem index="342" value="Physidae"/>
+                    <StringItem index="343" value="Physeteridae"/>
+                    <StringItem index="344" value="Picramniaceae"/>
+                    <StringItem index="345" value="Urticaceae"/>
+                    <StringItem index="346" value="Pipritidae"/>
+                    <StringItem index="347" value="Plagiochilaceae"/>
+                    <StringItem index="348" value="Planorbidae"/>
+                    <StringItem index="349" value="Podocarpaceae"/>
+                    <StringItem index="350" value="Sciaenidae"/>
+                    <StringItem index="351" value="Polygalaceae"/>
+                    <StringItem index="352" value="Polyprionidae"/>
+                    <StringItem index="353" value="Ampullariidae"/>
+                    <StringItem index="354" value="Pontoporiidae"/>
+                    <StringItem index="355" value="Portulacaceae"/>
+                    <StringItem index="356" value="Rallidae"/>
+                    <StringItem index="357" value="Batrachoididae"/>
+                    <StringItem index="358" value="Hydrobiidae"/>
+                    <StringItem index="359" value="Gentianaceae"/>
+                    <StringItem index="360" value="Bruchiaceae"/>
+                    <StringItem index="361" value="Dasypodidae"/>
+                    <StringItem index="362" value="Pristidae"/>
+                    <StringItem index="363" value="Procellariidae"/>
+                    <StringItem index="364" value="Odontophrynidae"/>
+                    <StringItem index="365" value="Prochilodontidae"/>
+                    <StringItem index="366" value="Olpiidae"/>
+                    <StringItem index="367" value="Chaetodontidae"/>
+                    <StringItem index="368" value="Chthoniidae"/>
+                    <StringItem index="369" value="Spirostreptidae"/>
+                    <StringItem index="370" value="Iridaceae"/>
+                    <StringItem index="371" value="Psophiidae"/>
+                    <StringItem index="372" value="Ramphastidae"/>
+                    <StringItem index="373" value="Mustelidae"/>
+                    <StringItem index="374" value="Strigidae"/>
+                    <StringItem index="375" value="Quillajaceae"/>
+                    <StringItem index="376" value="Spongillidae"/>
+                    <StringItem index="377" value="Marsileaceae"/>
+                    <StringItem index="378" value="Zingiberaceae"/>
+                    <StringItem index="379" value="Rhincodontidae"/>
+                    <StringItem index="380" value="Rhinobatidae"/>
+                    <StringItem index="381" value="Ricciaceae"/>
+                    <StringItem index="382" value="Cynodontidae"/>
+                    <StringItem index="383" value="Connaraceae"/>
+                    <StringItem index="384" value="Hubbardiidae"/>
+                    <StringItem index="385" value="Alismataceae"/>
+                    <StringItem index="386" value="Scolopendridae"/>
+                    <StringItem index="387" value="Scorpaenidae"/>
+                    <StringItem index="388" value="Selaginellaceae"/>
+                    <StringItem index="389" value="Elaeocarpaceae"/>
+                    <StringItem index="390" value="Smilacaceae"/>
+                    <StringItem index="391" value="Delphinidae"/>
+                    <StringItem index="392" value="Escadabiidae"/>
+                    <StringItem index="393" value="Bochicidae"/>
+                    <StringItem index="394" value="Sphyrnidae"/>
+                    <StringItem index="395" value="Loganiaceae"/>
+                    <StringItem index="396" value="Cryptogeobiidae"/>
+                    <StringItem index="397" value="Pomatiopsidae"/>
+                    <StringItem index="398" value="Fringilidae"/>
+                    <StringItem index="399" value="Squalidae"/>
+                    <StringItem index="400" value="Squatinidae"/>
+                    <StringItem index="401" value="Tropiduridae"/>
+                    <StringItem index="402" value="Dichapetalaceae"/>
+                    <StringItem index="403" value="Sternidae"/>
+                    <StringItem index="404" value="Succineidae"/>
+                    <StringItem index="405" value="Sulidae"/>
+                    <StringItem index="406" value="Symplocaceae"/>
+                    <StringItem index="407" value="Synaptidae"/>
+                    <StringItem index="408" value="Tapiriidae"/>
+                    <StringItem index="409" value="Tayassuidae"/>
+                    <StringItem index="410" value="Pentaphylacaceae"/>
+                    <StringItem index="411" value="Bulimulidae"/>
+                    <StringItem index="412" value="Thelypteridaceae"/>
+                    <StringItem index="413" value="Scombridae"/>
+                    <StringItem index="414" value="Ardeidae"/>
+                    <StringItem index="415" value="Torpedinidae"/>
+                    <StringItem index="416" value="Trichechidae"/>
+                    <StringItem index="417" value="Trigoniaceae"/>
+                    <StringItem index="418" value="Paronellidae"/>
+                    <StringItem index="419" value="Trogonidae"/>
+                    <StringItem index="420" value="Tropaeolaceae"/>
+                    <StringItem index="421" value="Tropidophiidae"/>
+                    <StringItem index="422" value="Caprifoliaceae"/>
+                    <StringItem index="423" value="Spengelidae"/>
+                    <StringItem index="424" value="Xenopidae"/>
+                    <StringItem index="425" value="Xyridaceae"/>
+                    <StringItem index="426" value="Pyrgodesmidae"/>
+                  </StringArray>
                 </Property>
               </Properties>
               <Events>
@@ -234,6 +677,9 @@
                   <Color id="Default Cursor"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtEspecieKeyReleased"/>
+              </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                   <AbsoluteConstraints x="650" y="50" width="180" height="30"/>
@@ -300,7 +746,7 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="10" y="90" width="120" height="-1"/>
+                  <AbsoluteConstraints x="10" y="90" width="140" height="-1"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -351,7 +797,7 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="860" y="90" width="110" height="-1"/>
+                  <AbsoluteConstraints x="860" y="90" width="150" height="-1"/>
                 </Constraint>
               </Constraints>
             </Component>

@@ -10,6 +10,7 @@ import com.mycompany.firebase.model.SpcModel;
 import static com.mycompany.firebase.util.Common.initFirebase;
 import java.util.ArrayList;
 import com.mycompany.firebase.util.CsvConvert;
+import java.util.HashSet;
 import javax.swing.JOptionPane;
 import javax.swing.ListSelectionModel;
 /**
@@ -22,8 +23,8 @@ public class Menu extends javax.swing.JFrame {
     private String colunas[] = {"Fauna/Flora", "Grupo", "Família", "Espécie (Simplificado)", "Nome Comum", "Categoria de Ameaça", "Bioma", "Principais Ameaças", "Estados de Ocorrência"};
     private ArrayList<SpcModel> lista = new ArrayList<SpcModel>();
     private ArrayList<SpcModel> resultLista = new ArrayList<SpcModel>();
-    private MenuJTable tabela;
-    
+    private EspecieTableModel tabela;
+    private EspecieTableModel tabelaFiltrada;
     
     public Menu() {
         initComponents();
@@ -115,7 +116,7 @@ public class Menu extends javax.swing.JFrame {
         panPesquisa.add(lblFaunaFlora);
         lblFaunaFlora.setBounds(10, 30, 80, 20);
 
-        cbFaunaFlora.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Fauna", "Flora" }));
+        cbFaunaFlora.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecionar", "Fauna", "Flora" }));
         cbFaunaFlora.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbFaunaFloraActionPerformed(evt);
@@ -128,6 +129,7 @@ public class Menu extends javax.swing.JFrame {
         panPesquisa.add(lblGrupo);
         lblGrupo.setBounds(170, 30, 40, 20);
 
+        cbGrupo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecionar", "Anfíbios", "Angiospermas", "Aves", "Briôfitas", "Gimnospermas", "Invertebrados Aquáticos", "Invertebrados Terrestres", "Mamíferos", "Peixes Continentais", "Peixes Marinhos", "Pteridófitas", "Répteis" }));
         cbGrupo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbGrupoActionPerformed(evt);
@@ -140,6 +142,7 @@ public class Menu extends javax.swing.JFrame {
         panPesquisa.add(lblFamilia);
         lblFamilia.setBounds(340, 30, 40, 20);
 
+        cbFamilia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecionar", "Salicaceae", "Cracidae", "Malvaceae", "Santalaceae", "Myrtaceae", "Coenagrionidae", "Hypogastruridae", "Plantaginaceae", "Achiridae", "Orchidaceae", "Asteraceae", "Furnariidae", "Arecaceae", "Eriocaulaceae", "Nymphalidae", "Baetidae", "Eleutherodactylidae", "Bignoniaceae", "Euphorbiaceae", "Pteridaceae", "Bromeliaceae", "Aeglidae", "Fabaceae", "Orobanchaceae", "Hylidae", "Poaceae", "Pimelodidae", "Lauraceae", "Cricetidae", "Polypodiaceae", "Tyrannidae", "Sphingidae", "Aromobatidae", "Rutaceae", "Alopiidae", "Atelidae", "Verbenaceae", "Rubiaceae", "Alstroemeriaceae", "Amaranthaceae", "Lucanidae", "Accipitridae", "Psittacidae", "Teiidae", "Typhlopidae", "Amphisbanidae", "Lampyridae", "Rivulidae", "Buthidae", "Loricariidae", "Anemiaceae", "Annonaceae", "Formicidae", "Araceae", "Motacillidae", "Pipridae", "Loasaceae", "Parodontidae", "Acanthaceae", "Characidae", "Dipsadidae", "Apteronotidae", "Araucariaceae", "Lycaenidae", "Andrenidae", "Aristolochiaceae", "Passerelidae", "Arrhopalitidae", "Cactaceae", "Aspleniaceae", "Cyclanthaceae", "Astropectinidae", "Canidae", "Scarabaeidae", "Arhynchobatidae", "Dicranaceae", "Trochilidae", "Theraphosidae", "Gymnophthalmidae", "Balaenopteridae", "Malpighiaceae", "Velloziaceae", "Begoniaceae", "Berberidaceae", "Lecythidaceae", "Melastomataceae", "Gesneriaceae", "Cervidae", "Blechnaceae", "Lejeuneaceae", "Plethodontidae", "Calyceraceae", "Viperidae", "Bouchardiidae", "Brachycephalidae", "Hypopomidae", "Bradypodidae", "Mabuyidae", "Prodidomidae", "Hedwigiaceae", "Combretaceae", "Scrophulariaceae", "Cyperaceae", "Burseraceae", "Pitheciidae", "Solanaceae", "Scolopacidae", "Vochysiaceae", "Echimyidae", "Callitrichidae", "Didelphidae", "Platyrinchidae", "Dendrocolaptidae", "Capitonidae", "Carcharhinidae", "Odontaspididae", "Lamnidae", "Gecarcinidae", "Cheloniidae", "Cotingidae", "Lycidae", "Cardinalidae", "Cassidulidae", "Simaroubaceae", "Aeshnidae", "Caviidae", "Cebidae", "Meliaceae", "Ctenidae", "Picidae", "Ciidae", "Thamnophilidae", "Microdesmidae", "Cetorhinidae", "Erethizontidae", "Formicariidae", "Crenuchidae", "Charadriidae", "Charinidae", "Pieridae", "Heptapteridae", "Microhylidae", "Oleaceae", "Serranidae", "Dithrichaceae", "Sapotaceae", "Turdidae", "Vitaceae", "Columbidae", "Clusiaceae", "Poeciliidae", "Carabidae", "Sphaerodactylidae", "Rhamnaceae", "Actiniidae", "Conopophagidae", "Thraupidae", "Dytiscidae", "Boidae", "Metaniidae", "Callichthyidae", "Asteriidae", "Chrysobalanaceae", "Crassulaceae", "Cichlidae", "Hylodidae", "Cryptopidae", "Tinamidae", "Ctenomyidae", "Sapindaceae", "Lythraceae", "Icteridae", "Lamiaceae", "Corvidae", "Cycloramphidae", "Dactyloidae", "Dasyatidae", "Dilleniaceae", "Dermochelydae", "Commelinaceae", "Dicksoniaceae", "Diomedeidae", "Onuphidae", "Chelodesmidae", "Dioscoreaceae", "Lycopodiaceae", "Hyriidae", "Saturniidae", "Apocynaceae", "Moraceae", "Hesperiidae", "Droseraceae", "Drymusidae", "Sternopygidae", "Amaryllidaceae", "Gobiidae", "Dryopteridaceae", "Libellulidae", "Rhinocryptidae", "Tripterygiidae", "Leiosauridae", "Ephedraceae", "Epinephelidae", "Peripatidae", "Vespertilionidae", "Apiaceae", "Erythroxylaceae", "Escalloniaceae", "Balaenidae", "Eukoeneniidae", "Eunicidae", "Proteaceae", "Gonyleptidae", "Strombidae", "Pectinidae", "Convolvulaceae", "Glossoscolecidae", "Fregatidae", "Furipteridae", "Triakidae", "Ericaceae", "Ariidae", "Lentibulariaceae", "Scleruridae", "Ginglymostomatidae", "Trichomycteridae", "Glomerodesmidae", "Phyllostomidae", "Marantaceae", "Arnelliaceae", "Strophocheilidae", "Grallariidae", "Gunneraceae", "Gymnuridae", "Chactidae", "Labridae", "Halichondriidae", "Dipluridae", "Doradidae", "Cistaceae", "Rhynchocyclidae", "Papilionidae", "Leptophlebiidae", "Heteragrionidae", "Syngnathidae", "Craugastoridae", "Phyllodactylidae", "Humiriaceae", "Violaceae", "Araliaceae", "Caprimulgidae", "Vireonidae", "Hymenophyllaceae", "Hypericaceae", "Vesperidae", "Anostomidae", "Streptaxidae", "Corinnidae", "Ideoroncidae", "Aquifoliaceae", "Iniidae", "Tityridae", "Myristicaceae", "Isoetaceae", "Isotomidae", "Pallaviciniaceae", "Anablepidae", "Riodinidae", "Jungermanniaceae", "Istiophoridae", "Calophyllaceae", "Latrunculiidae", "Lebiasinidae", "Felidae", "Pottiaceae", "Ophidiasteridae", "Linaceae", "Liolaemidae", "Campanulaceae", "Pseudopimelodidae", "Malacanthidae", "Luidiidae", "Lutjanidae", "Ochnaceae", "Lymnaeidae", "Primulaceae", "Toxopneustidae", "Odontostomidae", "Monimiaceae", "Labrisomidae", "Mobulidae", "Marchantiaceae", "Salticidae", "Chernetidae", "Celastraceae", "Megalobulimidae", "Megalopidae", "Bufonidae", "Apidae", "Anatidae", "Chelidae", "Pholcidae", "Metzgeriaceae", "Pomacentridae", "Phytolaccaceae", "Milleporidae", "Momotidae", "Bucconidae", "Gelsemiaceae", "Podostemaceae", "Mussidae", "Mycetopodidae", "Serrasalmidae", "Myliobatidae", "Anacardiaceae", "Myrmecophagidae", "Myxinidae", "Natalidae", "Cuculidae", "Hexanchidae", "Nyctibiidae", "Ochyroceratidae", "Atherinopsidae", "Odontophoridae", "Olividae", "Ophidiidae", "Oreasteridae", "Oxalidaceae", "Lepidoziaceae", "Pyralidae", "Sminthuridae", "Leptodactylidae", "Potamotrygonidae", "Passifloraceae", "Piperaceae", "Cryptodesmidae", "Vermetidae", "Phaethontidae", "Phyllanthaceae", "Veronicellidae", "Gomphidae", "Physidae", "Physeteridae", "Picramniaceae", "Urticaceae", "Pipritidae", "Plagiochilaceae", "Planorbidae", "Podocarpaceae", "Sciaenidae", "Polygalaceae", "Polyprionidae", "Ampullariidae", "Pontoporiidae", "Portulacaceae", "Rallidae", "Batrachoididae", "Hydrobiidae", "Gentianaceae", "Bruchiaceae", "Dasypodidae", "Pristidae", "Procellariidae", "Odontophrynidae", "Prochilodontidae", "Olpiidae", "Chaetodontidae", "Chthoniidae", "Spirostreptidae", "Iridaceae", "Psophiidae", "Ramphastidae", "Mustelidae", "Strigidae", "Quillajaceae", "Spongillidae", "Marsileaceae", "Zingiberaceae", "Rhincodontidae", "Rhinobatidae", "Ricciaceae", "Cynodontidae", "Connaraceae", "Hubbardiidae", "Alismataceae", "Scolopendridae", "Scorpaenidae", "Selaginellaceae", "Elaeocarpaceae", "Smilacaceae", "Delphinidae", "Escadabiidae", "Bochicidae", "Sphyrnidae", "Loganiaceae", "Cryptogeobiidae", "Pomatiopsidae", "Fringilidae", "Squalidae", "Squatinidae", "Tropiduridae", "Dichapetalaceae", "Sternidae", "Succineidae", "Sulidae", "Symplocaceae", "Synaptidae", "Tapiriidae", "Tayassuidae", "Pentaphylacaceae", "Bulimulidae", "Thelypteridaceae", "Scombridae", "Ardeidae", "Torpedinidae", "Trichechidae", "Trigoniaceae", "Paronellidae", "Trogonidae", "Tropaeolaceae", "Tropidophiidae", "Caprifoliaceae", "Spengelidae", "Xenopidae", "Xyridaceae", "Pyrgodesmidae" }));
         cbFamilia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbFamiliaActionPerformed(evt);
@@ -153,6 +156,11 @@ public class Menu extends javax.swing.JFrame {
         lblEspecie.setBounds(660, 30, 60, 16);
 
         txtEspecie.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txtEspecie.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtEspecieKeyReleased(evt);
+            }
+        });
         panPesquisa.add(txtEspecie);
         txtEspecie.setBounds(650, 50, 180, 30);
 
@@ -186,7 +194,7 @@ public class Menu extends javax.swing.JFrame {
 
         lblCatAmeaca.setText("Categoria de Ameaça");
         panPesquisa.add(lblCatAmeaca);
-        lblCatAmeaca.setBounds(10, 90, 120, 16);
+        lblCatAmeaca.setBounds(10, 90, 140, 16);
         panPesquisa.add(txtAmeaca);
         txtAmeaca.setBounds(0, 110, 300, 30);
 
@@ -204,7 +212,7 @@ public class Menu extends javax.swing.JFrame {
 
         lblEstadosOcorrencia.setText("Estado de Ocorrencia");
         panPesquisa.add(lblEstadosOcorrencia);
-        lblEstadosOcorrencia.setBounds(860, 90, 110, 16);
+        lblEstadosOcorrencia.setBounds(860, 90, 150, 16);
         panPesquisa.add(txtOcorrencia);
         txtOcorrencia.setBounds(850, 110, 180, 30);
 
@@ -266,18 +274,14 @@ public class Menu extends javax.swing.JFrame {
 
     private void btnConnectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConnectActionPerformed
         // TODO add your handling code here:
-        try{
-            initFirebase();
-        }catch(Exception e){
-            
-        }
+        conectBananinha();
     }//GEN-LAST:event_btnConnectActionPerformed
 
     private void btnSyncActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSyncActionPerformed
-        // TODO add your handling code here:
-        //String valor = (String) cbFaunaFlora.getSelectedItem();
-        //System.out.println(valor);
-        syncBananinha();
+    //        (sync)
+    //        1 -> baixar de novo do link do ministerio do ambiente 
+    //        2 -> converter(csv/json) salvar novamente
+    //    syncBananinha();
     }//GEN-LAST:event_btnSyncActionPerformed
 
     private void cbFaunaFloraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbFaunaFloraActionPerformed
@@ -295,17 +299,24 @@ public class Menu extends javax.swing.JFrame {
 
     private void btnPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisarActionPerformed
         // TODO add your handling code here:
+        //pesquisar();
+        filterBananinha();
     }//GEN-LAST:event_btnPesquisarActionPerformed
 
     private void cbGrupoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbGrupoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cbGrupoActionPerformed
-
+    
     private void cbFamiliaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbFamiliaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cbFamiliaActionPerformed
+
+    private void txtEspecieKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEspecieKeyReleased
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_txtEspecieKeyReleased
     
-    private void syncBananinha(){
+    private void conectBananinha(){
         CsvConvert csv = new CsvConvert(true);
         
         try {
@@ -319,10 +330,10 @@ public class Menu extends javax.swing.JFrame {
                         SpcModel especies = ds.getValue(SpcModel.class);
                         lista.add(especies);
                     }
-                    tabela = new MenuJTable(lista, colunas);
+                    tabela = new EspecieTableModel(lista, colunas);
                     tabRespostaServer.setModel(tabela);
                     tabRespostaServer.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-//                    jTable1.setText("");
+//                  jTable1.setText("");
                 }
 
                 @Override
@@ -342,18 +353,70 @@ public class Menu extends javax.swing.JFrame {
         resultLista.clear();
         String bioma = txtBioma.getText().toLowerCase().trim();
         String nomeComun = txtNomeComum.getText().toLowerCase().trim();
-        String especie = txtNomeComum.getText().toLowerCase().trim();
-        String catAmeaca = txtNomeComum.getText().toLowerCase().trim();
-        String prinAmeaca = txtNomeComum.getText().toLowerCase().trim();
-        String estadoOcorrencia = txtNomeComum.getText().toLowerCase().trim();
+        String especie = txtEspecie.getText().toLowerCase().trim();
+        String catAmeaca = txtAmeaca.getText().toLowerCase().trim();
+        String prinAmeaca = txtPrinAmeaca.getText().toLowerCase().trim();
+        String estadoOcorrencia = txtOcorrencia.getText().toLowerCase().trim();
         
-        String faunaFlora = (String)cbFaunaFlora.getSelectedItem();
-        String grupo = (String)cbGrupo.getSelectedItem();
-        String familia = (String)cbFamilia.getSelectedItem();
+        String faunaFlora = cbFaunaFlora.getItemAt(cbFaunaFlora.getSelectedIndex());
+        String grupo = cbGrupo.getItemAt(cbGrupo.getSelectedIndex());
+        String familia = cbFamilia.getItemAt(cbFamilia.getSelectedIndex());
+       //grupo = grupo.replace("í","i");
+        boolean teste = true;
         
-        
+        for(int i = 0; i < lista.size(); i++){
+            teste = true;
+            
+            if(!bioma.equals("")){
+                if(!lista.get(i).getBioma().trim().toLowerCase().equals(bioma)){
+                    teste = false;
+                }
+            }
+            if(!nomeComun.equals("")){
+                if(!lista.get(i).getNome_comum().trim().toLowerCase().equals(nomeComun)){
+                    teste = false;
+                }
+            }
+            if(!especie.equals("")){
+                if(!lista.get(i).getEspecie().trim().toLowerCase().equals(especie)){
+                    teste = false;
+                }
+            }
+            if(!catAmeaca.equals("")){
+                if(!lista.get(i).getAmeaca().trim().toLowerCase().equals(catAmeaca)){
+                    teste = false;
+                }
+            }
+            if(!estadoOcorrencia.equals("")){
+                if(!lista.get(i).getEstado().trim().toLowerCase().equals(estadoOcorrencia)){
+                    teste = false;
+                }
+            }
+            if(!faunaFlora.equals("Selecionar")){
+                if(!lista.get(i).getFauflo().equals(faunaFlora)){
+                    teste = false;
+                }
+            }
+            if(!grupo.equals("Selecionar")){
+                if(!lista.get(i).getGrupo().equals(grupo)){
+                    teste = false;
+                }
+            }
+            if(!familia.equals("Selecionar")){
+                if(!lista.get(i).getFamilia().equals(familia)){
+                    teste = false;
+                }
+            }
+            if(teste) {
+                resultLista.add(lista.get(i));
+            }
+        }
+        tabelaFiltrada = new EspecieTableModel(resultLista, colunas);
+        tabRespostaServer.setModel(tabelaFiltrada);
+        tabRespostaServer.setSelectionMode(ListSelectionModel.SINGLE_SELECTION); 
     }
 
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

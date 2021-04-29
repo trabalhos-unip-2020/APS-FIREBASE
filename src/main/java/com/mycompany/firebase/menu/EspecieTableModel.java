@@ -9,12 +9,12 @@ import java.util.ArrayList;
 import javax.swing.table.AbstractTableModel;
 import com.mycompany.firebase.model.SpcModel;
 
-public class MenuJTable extends AbstractTableModel{
+public class EspecieTableModel extends AbstractTableModel{
     
     private ArrayList<SpcModel> linhas;
     String[] colunas;
     
-    public MenuJTable(ArrayList<SpcModel> arrayspc, String[] colunas){
+    public EspecieTableModel(ArrayList<SpcModel> arrayspc, String[] colunas){
         this.colunas = colunas;
         linhas = arrayspc;
     }
