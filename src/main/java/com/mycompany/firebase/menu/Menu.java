@@ -281,7 +281,8 @@ public class Menu extends javax.swing.JFrame {
     //        (sync)
     //        1 -> baixar de novo do link do ministerio do ambiente 
     //        2 -> converter(csv/json) salvar novamente
-    //    syncBananinha();
+        syncBananinha();
+        
     }//GEN-LAST:event_btnSyncActionPerformed
 
     private void cbFaunaFloraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbFaunaFloraActionPerformed
@@ -295,6 +296,7 @@ public class Menu extends javax.swing.JFrame {
 
     private void btnLimparPesquisaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparPesquisaActionPerformed
         // TODO add your handling code here:
+        conectBananinha();
     }//GEN-LAST:event_btnLimparPesquisaActionPerformed
 
     private void btnPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisarActionPerformed
@@ -315,6 +317,39 @@ public class Menu extends javax.swing.JFrame {
         // TODO add your handling code here:
 
     }//GEN-LAST:event_txtEspecieKeyReleased
+    
+     private void syncBananinha(){
+        CsvConvert csv = new CsvConvert(true);
+        
+        try {
+            spcRef.addValueEventListener(new ValueEventListener() {
+
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    lista.clear();
+
+                    for (DataSnapshot ds : dataSnapshot.getChildren()) {
+                        SpcModel especies = ds.getValue(SpcModel.class);
+                        lista.add(especies);
+                    }
+                    tabela = new EspecieTableModel(lista, colunas);
+                    tabRespostaServer.setModel(tabela);
+                    tabRespostaServer.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+//                  jTable1.setText("");
+                }
+
+                @Override
+                public void onCancelled(DatabaseError e) {
+                    JOptionPane.showMessageDialog(null, "Consulta Cancelada \n" + e.getMessage());
+
+                }
+
+            });
+            System.out.println(lista);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Erro na Consulta\n" + e.getMessage());
+        }
+    }
     
     private void conectBananinha(){
         CsvConvert csv = new CsvConvert(true);
